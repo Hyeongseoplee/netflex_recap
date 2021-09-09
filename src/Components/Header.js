@@ -7,14 +7,14 @@ border-bottom:2px solid black;
 box-shadow: 2px 2px 5px black;
 `;
 
-const Header_wrapper = styled.div`
+const HEADERWRAPPER = styled.div`
     padding-top: 8px;
     padding-bottom: 10px;
     display:flex;
     margin:0 2.5rem;
 `;
 
-const Header_logo = styled.div`
+const HEADERLOGO = styled.div`
     color:red;
     font-size:35px;
 `;
@@ -44,8 +44,8 @@ const SLink = styled(Link)`
 export default function Header() {
     return (
         <SHeader>
-            <Header_wrapper>
-            <Header_logo>Netflix</Header_logo>
+            <HEADERWRAPPER>
+            <HEADERLOGO>Netflix</HEADERLOGO>
             <Links>
                 <List>
                     <SLink to="/">Home</SLink>
@@ -57,7 +57,7 @@ export default function Header() {
                     <SLink to="/search">Search</SLink>
                 </List>
             </Links>
-            </Header_wrapper>
+            </HEADERWRAPPER>
         </SHeader>
     )
 }

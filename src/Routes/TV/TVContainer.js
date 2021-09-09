@@ -1,7 +1,47 @@
+import React from 'react';
 import TVPresenter from './TVPresenter';
+import { TVApi } from '../../api';
 
-export default function TVContainer() {
-    return (
-        <TVPresenter/>
-    )
+export default class TVContainer extends React.Component {
+    state = {
+        popular : null,
+        airingToday : null,
+        topRated : null,
+        error : null,
+        isLoading : true
+    }
+    
+    async componentDidMount(){
+        try{
+            const { data : { results : popular }} = await TVApi.popular();
+            const { data : { results : airingToday }} = await TVApi.airingToday();
+            const { data : { results : topRated }} = await TVApi.topRated();
+            this.setState({
+                popular,
+                airingToday,
+                topRated,
+            })
+        }catch{
+            this.setState({
+                error : "Sorry, Cannot find Tv shows :("
+            })
+        }finally{
+            this.setState({
+                isLoading : false
+            })
+        }
+    }
+
+    render() {
+        const { popular, airingTiday, topRated, error, isLoading } = this.state;
+        return (
+            <TVPresenter
+            popular = { popular }
+            airingTiday = { airingTiday }
+            topRated = { topRated }
+            error = { error }
+            isLoading = { isLoading }/>
+        )
+    }
+
 }
