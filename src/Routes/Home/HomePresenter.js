@@ -1,5 +1,13 @@
-export default function HomePresenter() {
-    return (
-        <h1>This is Home!</h1>
-    )
+import PropTypes from 'prop-types';
+
+const HomePresenter = ({ nowPlaying, upcoming, popular, error, isLoading }) => null;
+
+HomePresenter.prototype = {
+    nowPlaying : PropTypes.array,
+    upcoming : PropTypes.array,
+    popular : PropTypes.array,
+    error : PropTypes.string,
+    isLoading : PropTypes.bool.isRequired,
 }
+
+export default HomePresenter;

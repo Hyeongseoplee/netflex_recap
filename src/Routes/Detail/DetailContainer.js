@@ -29,26 +29,26 @@ export default class DetailContainer extends React.Component {
 
             try{
                 if(isMovie){
-                    result = await MovieApi.movieDetail(parsedId);
+                    const request = await MovieApi.movieDetail(parsedId);
+                    result = request.data
                 }else{
-                    result = await TVApi.tvDetail(parsedId);
+                    const request = await TVApi.tvDetail(parsedId);
+                    result = request.data
                 }
-                this.setState({
-                    result,
-                })
-                // this.setState({
-                //     movieSearch,
-                //     tvSearch,
-                // });
             } catch {
                 this.setState({ error : "Ooops!!" })
             } finally {
-                this.setState({ isLoading : false })
+                this.setState({
+                    isLoading : false ,
+                    result,
+                })
             }
         }
 
     render(){
         const { result, error, isLoading } = this.state;
+        console.log(this.state);
+
         return (
             <DetailPresenter
                 result = { result }

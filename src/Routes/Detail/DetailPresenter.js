@@ -1,5 +1,11 @@
-export default function DetailPresenter() {
-    return (
-        <h1>This is Detail page.</h1>
-    )
+import PropTypes from 'prop-types';
+
+const DetailPresenter = ({ result, error, isLoading }) => null;
+
+DetailPresenter.prototype = {
+    result : PropTypes.array,
+    error : PropTypes.string,
+    isLoading : PropTypes.bool.isRequired,
 }
+
+export default DetailPresenter;

@@ -6,7 +6,7 @@ export default class SearchContainer extends React.Component{
     state = {
             movieSearch : null,
             tvSearch : null,
-            searchTerm : "hello",
+            searchTerm : "",
             error : null,
             isLoading : false,
     }
@@ -15,8 +15,8 @@ export default class SearchContainer extends React.Component{
         const { searchTerm } = this.state;
         if(searchTerm !== ""){
             this.fetchSearchDatas();
-        }// class에선 history 를 못 쓴다.. 어떻게 해야할까?
     }
+}
 
     fetchSearchDatas = async () => { 
         const { searchTerm } = this.state;
@@ -42,6 +42,7 @@ export default class SearchContainer extends React.Component{
 
     render(){
         const { movieSearch, tvSearch, searchTerm, error, isLoading } = this.state;
+        console.log(this.state);
         return (
             <>
             <SearchPresenter
