@@ -12,9 +12,9 @@ export default function Routers() {
         <Switch>
             <Route path="/" exact component = { Home }></Route>
             <Route path="/search" component={ Seacrh }></Route>
-            <Route path="/movie:id" component= { Detail }></Route>
+            <Route path="/movie/:id" component= { Detail }></Route>
             <Route path="/tv" exact component={ TV }></Route>
-            <Route path="/tv:id" component= { Detail }></Route>
+            <Route path="/tv/:id" component= { Detail }></Route>
         </Switch>
         </Router>
     )
