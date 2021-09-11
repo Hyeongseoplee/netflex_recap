@@ -33,12 +33,11 @@ export default class TVContainer extends React.Component {
     }
 
     render() {
-        const { popular, airingTiday, topRated, error, isLoading } = this.state;
-        console.log(this.state);
+        const { popular, airingToday, topRated, error, isLoading } = this.state;
         return (
             <TVPresenter
             popular = { popular }
-            airingTiday = { airingTiday }
+            airingToday = { airingToday }
             topRated = { topRated }
             error = { error }
             isLoading = { isLoading }/>
