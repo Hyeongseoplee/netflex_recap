@@ -8,13 +8,16 @@ const Container = styled.section`
 `;
 
 const Title = styled.span`
-    font-size:16px;
+    font-size:24px;
     font-weight: 400;
 `;
 
 const Grid = styled.div`
     font-size:14px;
-    margin-top: 20px;
+    margin-top: 25px;
+    gap:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fill, 100px);
 `;
 
 const Section = ({title, children}) => 

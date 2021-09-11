@@ -1,22 +1,24 @@
 import PropTypes from 'prop-types';
 import Section from '../../Components/Section';
 import styled from 'styled-components';
+import { Loader } from '../../Components/Loader';
+
 
 const Container = styled.div`
 padding : 15px;
 `;
 
 const TVPresenter = ({ popular, airingToday, topRated, error, isLoading }) => {
-        return isLoading ? null :
+        return isLoading ? <Loader/> :
             <Container>
                 <Section title = "popular">
-                    {popular.map(movie => movie.name)}
+                    {popular.map(movie => <div key = {movie.id}>{movie.name}</div>)}
                 </Section>
                 <Section title = "airingToday">
-                    {airingToday.map(movie => movie.name)}
+                    {airingToday.map(movie => <div key = {movie.id}>{movie.name}</div>)}
                 </Section>
                 <Section title = "topRated">
-                    {topRated.map(movie => movie.name)}
+                    {topRated.map(movie => <div key = {movie.id}>{movie.name}</div>)}
                 </Section>
             </Container>
 
