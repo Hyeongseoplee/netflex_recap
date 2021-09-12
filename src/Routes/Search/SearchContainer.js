@@ -11,12 +11,20 @@ export default class SearchContainer extends React.Component{
             isLoading : false,
     }
 
-    handleSubmit = () => {
+    handleSubmit = (e) => {
+        e.preventDefault();
         const { searchTerm } = this.state;
         if(searchTerm !== ""){
             this.fetchSearchDatas();
     }
 }
+
+    updateTerm = (e) => {
+        const { target : { value }} = e;
+        this.setState({
+            searchTerm : value,
+        });
+    }
 
     fetchSearchDatas = async () => { 
         const { searchTerm } = this.state;
@@ -41,8 +49,8 @@ export default class SearchContainer extends React.Component{
     }
 
     render(){
-        const { movieSearch, tvSearch, searchTerm, error, isLoading } = this.state;
-        console.log(this.state);
+        const { movieSearch, tvSearch, error, isLoading, searchTerm, handleSubmit, updateTerm } = this.state;
+        console.log(this.state)
         return (
             <>
             <SearchPresenter
@@ -51,7 +59,9 @@ export default class SearchContainer extends React.Component{
                 searchTerm = { searchTerm }
                 error = { error }
                 isLoading = { isLoading }
-                handleSubmit = { this.handleSubmit }/>
+                handleSubmit = { this.handleSubmit }
+                updateTerm = { this.updateTerm }
+                />
             </>
         )
     } 
