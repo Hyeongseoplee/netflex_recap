@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import Error from '../../Components/Error';
 import { Loader } from '../../Components/Loader';
 import Section from '../../Components/Section';
+import NotFoundMsg from '../../Components/NotFoundMsg';
 
 const Container = styled.div`
     padding : 10px 20px;
@@ -46,6 +48,9 @@ const SearchPresenter = ({
                     </>
                 )
                     }
+                { error && <Error errorMsg = { error } color = "#535c68"/>}
+                { movieSearch && tvSearch && movieSearch.length === 0 && tvSearch.length === 0 && <NotFoundMsg text={"Nothing found.."} color="#535c68"/>} 
+                {/* movieSearch와 tvSearch 가 true 라는 걸 확인해야 하는 이유는? */}
         </Container>;
 
 

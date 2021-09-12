@@ -36,7 +36,7 @@ export default class DetailContainer extends React.Component {
                     result = request.data
                 }
             } catch {
-                this.setState({ error : "Ooops!!" })
+                this.setState({ error : "Oops! Sorry, We can't respond your request. :(" })
             } finally {
                 this.setState({
                     isLoading : false ,

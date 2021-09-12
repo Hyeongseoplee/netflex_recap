@@ -39,7 +39,7 @@ export default class SearchContainer extends React.Component{
             )
         }catch {
             this.setState({
-                error : "Oops!"
+                error : "Oops! Let's try another word :) "
             })
         }finally {
             this.setState({
@@ -50,7 +50,6 @@ export default class SearchContainer extends React.Component{
 
     render(){
         const { movieSearch, tvSearch, error, isLoading, searchTerm, handleSubmit, updateTerm } = this.state;
-        console.log(this.state)
         return (
             <>
             <SearchPresenter

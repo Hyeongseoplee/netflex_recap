@@ -1,6 +1,7 @@
 import React from 'react';
 import TVPresenter from './TVPresenter';
 import { TVApi } from '../../api';
+import Error from '../../Components/Error';
 
 export default class TVContainer extends React.Component {
     state = {
@@ -20,10 +21,10 @@ export default class TVContainer extends React.Component {
                 popular,
                 airingToday,
                 topRated,
-            })
+            });
         }catch{
             this.setState({
-                error : "Sorry, Cannot find Tv shows :("
+                error : "Oops! Sorry, We can't respond your request. :("
             })
         }finally{
             this.setState({

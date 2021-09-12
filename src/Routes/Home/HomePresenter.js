@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import Section from '../../Components/Section';
 import styled from 'styled-components';
 import { Loader } from '../../Components/Loader';
+import Error from '../../Components/Error';
 
 const Container = styled.div`
 padding : 15px;
@@ -9,7 +10,7 @@ padding : 15px;
 
 
 const HomePresenter = ({ nowPlaying, upcoming, popular, error, isLoading }) => 
-    isLoading ? <Loader/> : (
+    isLoading ? <Loader/> : 
         <Container>
             {nowPlaying && nowPlaying.length > 0 && (
             <Section title = "nowPlaying">
@@ -26,8 +27,8 @@ const HomePresenter = ({ nowPlaying, upcoming, popular, error, isLoading }) =>
                 {popular.map(movie => <div key = {movie.id}>{movie.title}</div>)}
             </Section>
             )}
-        </Container>
-    );
+            { error && <Error errorMsg = { error } color = "#535c68"/>}
+        </Container>;
 
 HomePresenter.prototype = {
     nowPlaying : PropTypes.array,

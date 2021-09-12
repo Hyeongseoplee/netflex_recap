@@ -1,6 +1,7 @@
 import React from 'react';
 import HomePresenter from './HomePresenter';
 import { MovieApi } from '../../api';
+import Error from '../../Components/Error';
 
 export default class HomeContainer extends React.Component{
     state = {
@@ -20,9 +21,9 @@ export default class HomeContainer extends React.Component{
                 nowPlaying,
                 upcoming,
                 popular,
-            })
+            });
         }catch{
-            this.setState({ error : "Sorry, Cannot find movies :("})
+            this.setState({ error : "Oops! Sorry, We can't respond your request. :("})
         }finally{
             this.setState({
                 isLoading : false
