@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const SHeader = styled.header`
@@ -33,8 +33,8 @@ const List = styled.li`
     text-align: center;
     display:flex;
     align-items: center;
-    padding-bottom:10px;
-    border-bottom: 5px solid lightgray;
+    padding-bottom:21px;
+    border-bottom: 7px solid ${props => props.current ? "#e84118" : "transparent"};
 `;
 
 const SLink = styled(Link)`
@@ -42,23 +42,21 @@ const SLink = styled(Link)`
     padding: 2px 10px;
 `;
 
-export default function Header() {
-    return (
-        <SHeader>
-            <HEADERWRAPPER>
-                <HEADERLOGO>Netflix</HEADERLOGO>
-                <Links>
-                    <List>
-                        <SLink to="/home">Home</SLink>
-                    </List>
-                    <List>
-                        <SLink to="/tv">TV</SLink>
-                    </List>                
-                    <List>
-                        <SLink to="/search">Search</SLink>
-                    </List>
-                </Links>
-            </HEADERWRAPPER>
-        </SHeader>
-    )
-}
+export default withRouter(( { location : { pathname }}) => (
+    <SHeader>
+    <HEADERWRAPPER>
+        <HEADERLOGO>Netflix</HEADERLOGO>
+        <Links>
+            <List current={ pathname === "/home"}>
+                <SLink to="/home">Home</SLink>
+            </List>
+            <List current={ pathname === "/tv"}>
+                <SLink to="/tv">TV</SLink>
+            </List>                
+            <List current={ pathname === "/search"}>
+                <SLink to="/search">Search</SLink>
+            </List>
+        </Links>
+    </HEADERWRAPPER>
+</SHeader>
+));

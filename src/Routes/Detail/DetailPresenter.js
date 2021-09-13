@@ -93,7 +93,7 @@ const DetailPresenter = ({ result, error, isLoading}) =>
                         <MetaInfo>
                             <Year>{result.release_date ? result.release_date.substring(0,4) : result.first_air_date.substring(0,4)}</Year>
                             <Divider>∙</Divider>
-                            <RunTime>{result.runtime}min</RunTime>
+                            <RunTime>{result.runtime ? result.runtime : result.episode_run_time}min</RunTime>
                             <Divider>∙</Divider>
                             <Genres>{result.genres.map((genre, index) => index === result.genres.length - 1 ? genre.name : `${genre.name}/`)}</Genres>
                             {/* 마지막 장르 item 에 "/" 빼는거 이해 x */}
