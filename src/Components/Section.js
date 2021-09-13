@@ -15,7 +15,7 @@ const Title = styled.span`
 const Grid = styled.div`
     font-size:14px;
     margin-top: 25px;
-    gap:20px;
+    gap:30px;
     display:grid;
     grid-template-columns:repeat(auto-fill, 100px);
 `;

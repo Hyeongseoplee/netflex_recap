@@ -23,4 +23,5 @@ export default function Error({ errorMsg , color }){
 
     Error.prototype = {
         errorMsg : PropTypes.string.isRequired,
+        color : PropTypes.string.isRequired,
     }

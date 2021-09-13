@@ -4,6 +4,8 @@ import Error from '../../Components/Error';
 import { Loader } from '../../Components/Loader';
 import Section from '../../Components/Section';
 import NotFoundMsg from '../../Components/NotFoundMsg';
+import Poster from '../../Components/Poster';
+
 
 const Container = styled.div`
     padding : 10px 20px;
@@ -43,8 +45,31 @@ const SearchPresenter = ({
                 </Form>
                 {isLoading ? <Loader/> : (
                     <>
-                    {movieSearch && movieSearch.length > 0 && <Section title = "Movies Result">{movieSearch.map(movie => <div key={movie.key}>{movie.title}</div>)}</Section>}
-                    {tvSearch && tvSearch.length > 0 && <Section title = "Tv Result">{tvSearch.map(movie => <div key={movie.key}>{movie.name}</div>)}</Section>}
+                    {movieSearch && movieSearch.length > 0 && 
+                        <Section title = "Movies Result">
+                            {movieSearch.map(movie => 
+                                <Poster
+                                    key={movie.id}
+                                    id={movie.id} 
+                                    imgURL={movie.poster_path}
+                                    title={movie.title}
+                                    rating={movie.vote_average}
+                                    year={movie.release_date.substring(0, 4)}
+                                    isMovie={true}
+                                />)}
+                        </Section>}
+                    {tvSearch && tvSearch.length > 0 && 
+                        <Section title = "Tv Result">
+                            {tvSearch.map(tv => 
+                                <Poster
+                                key={tv.id} 
+                                id={tv.id}
+                                imgURL={tv.poster_path}
+                                title={tv.name}
+                                rating={tv.vote_average}
+                                year={tv.first_air_date && tv.first_air_date.substring(0,4)}
+                            />
+                            )}</Section>}
                     </>
                 )
                     }

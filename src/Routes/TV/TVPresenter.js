@@ -3,7 +3,7 @@ import Section from '../../Components/Section';
 import styled from 'styled-components';
 import { Loader } from '../../Components/Loader';
 import Error from '../../Components/Error';
-
+import Poster from '../../Components/Poster';
 
 const Container = styled.div`
 padding : 15px;
@@ -14,15 +14,37 @@ const TVPresenter = ({ popular, airingToday, topRated, error, isLoading }) => {
             <Container>
                 {popular && popular.length > 0 && 
                 <Section title = "popular">
-                    {popular.map(movie => <div key = {movie.id}>{movie.name}</div>)}
+                    {popular.map(tv => 
+                        <Poster
+                            key={tv.id} 
+                            id={tv.id}
+                            imgURL={tv.poster_path}
+                            title={tv.name}
+                            rating={tv.vote_average}
+                            year={tv.first_air_date.substring(0, 4)}
+                        />)}
                 </Section>}
                 {airingToday && airingToday.length > 0 && 
                 <Section title = "airingToday">
-                    {airingToday.map(movie => <div key = {movie.id}>{movie.name}</div>)}
+                    {airingToday.map(tv => <Poster
+                        key={tv.id} 
+                        id={tv.id}
+                        imgURL={tv.poster_path}
+                        title={tv.name}
+                        rating={tv.vote_average}
+                        year={tv.first_air_date.substring(0, 4)}
+                    />)}
                 </Section>}
                 {topRated && topRated.length > 0 && 
                 <Section title = "topRated">
-                    {topRated.map(movie => <div key = {movie.id}>{movie.name}</div>)}
+                    {topRated.map(tv => <Poster
+                        key={tv.id}
+                        id={tv.id} 
+                        imgURL={tv.poster_path}
+                        title={tv.name}
+                        rating={tv.vote_average}
+                        year={tv.first_air_date.substring(0, 4)}
+                    />)}
                 </Section>}
                 { error && <Error errorMsg = { error } color = "#535c68"/>}
             </Container>

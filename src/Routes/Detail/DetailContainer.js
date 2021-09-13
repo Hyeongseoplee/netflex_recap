@@ -39,7 +39,7 @@ export default class DetailContainer extends React.Component {
                 this.setState({ error : "Oops! Sorry, We can't respond your request. :(" })
             } finally {
                 this.setState({
-                    isLoading : false ,
+                    isLoading : false,
                     result,
                 })
             }
@@ -47,7 +47,6 @@ export default class DetailContainer extends React.Component {
 
     render(){
         const { result, error, isLoading } = this.state;
-        console.log(this.state);
 
         return (
             <DetailPresenter
