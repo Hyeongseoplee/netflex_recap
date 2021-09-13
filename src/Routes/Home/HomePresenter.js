@@ -37,6 +37,7 @@ const HomePresenter = ({ nowPlaying, upcoming, popular, error, isLoading }) =>
                         title={movie.title}
                         rating={movie.vote_average}
                         year={movie.release_date.substring(0, 4)}
+                        isMovie={true}
                     />)}
             </Section>
             )}
@@ -50,6 +51,7 @@ const HomePresenter = ({ nowPlaying, upcoming, popular, error, isLoading }) =>
                         title={movie.title}
                         rating={movie.vote_average}
                         year={movie.release_date.substring(0, 4)}
+                        isMovie={true}
                     />)}
             </Section>
             )}

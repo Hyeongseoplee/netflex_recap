@@ -4,13 +4,14 @@ import styled from 'styled-components';
 const SHeader = styled.header`
 padding-top:20px;
 border-bottom:2px solid black;
+box-sizing: border-box;
 box-shadow: 2px 2px 5px black;
 `;
 
 const HEADERWRAPPER = styled.div`
     padding-top: 8px;
-    padding-bottom: 10px;
     display:flex;
+    height:50px;
     margin:0 2.5rem;
 `;
 
@@ -45,18 +46,18 @@ export default function Header() {
     return (
         <SHeader>
             <HEADERWRAPPER>
-            <HEADERLOGO>Netflix</HEADERLOGO>
-            <Links>
-                <List>
-                    <SLink to="/">Home</SLink>
-                </List>
-                <List>
-                    <SLink to="/tv">TV</SLink>
-                </List>                
-                <List>
-                    <SLink to="/search">Search</SLink>
-                </List>
-            </Links>
+                <HEADERLOGO>Netflix</HEADERLOGO>
+                <Links>
+                    <List>
+                        <SLink to="/home">Home</SLink>
+                    </List>
+                    <List>
+                        <SLink to="/tv">TV</SLink>
+                    </List>                
+                    <List>
+                        <SLink to="/search">Search</SLink>
+                    </List>
+                </Links>
             </HEADERWRAPPER>
         </SHeader>
     )

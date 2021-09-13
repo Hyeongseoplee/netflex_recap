@@ -10,7 +10,7 @@ export default function Routers() {
         <Router>
         <Header/>
         <Switch>
-            <Route path="/" exact component = { Home }></Route>
+            <Route path="/home" component = { Home }></Route>
             <Route path="/search" component={ Seacrh }></Route>
             <Route path="/movie/:id" component= { Detail }></Route>
             <Route path="/tv" exact component={ TV }></Route>

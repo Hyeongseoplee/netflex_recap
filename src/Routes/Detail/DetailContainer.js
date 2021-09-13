@@ -11,7 +11,7 @@ export default class DetailContainer extends React.Component {
             result : null, // url에 들어온 값이 movie인지 tv인지 구분하고 id 가 무엇이냐에 따라 다른 데이터를 불러와야함
             isMovie : pathname.includes("/movie/"),
             error : null,
-            isLoading : false,
+            isLoading : true,
         }
     }
 
@@ -25,15 +25,14 @@ export default class DetailContainer extends React.Component {
             if(isNaN(parsedId)){
                 history.push("/");
             }
-            this.setState({ isLoading : true});
 
             try{
                 if(isMovie){
                     const request = await MovieApi.movieDetail(parsedId);
-                    result = request.data
+                        result = request.data;
                 }else{
                     const request = await TVApi.tvDetail(parsedId);
-                    result = request.data
+                        result = request.data;
                 }
             } catch {
                 this.setState({ error : "Oops! Sorry, We can't respond your request. :(" })
@@ -47,7 +46,7 @@ export default class DetailContainer extends React.Component {
 
     render(){
         const { result, error, isLoading } = this.state;
-
+        console.log(this.state)
         return (
             <DetailPresenter
                 result = { result }

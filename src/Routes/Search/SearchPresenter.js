@@ -6,7 +6,6 @@ import Section from '../../Components/Section';
 import NotFoundMsg from '../../Components/NotFoundMsg';
 import Poster from '../../Components/Poster';
 
-
 const Container = styled.div`
     padding : 10px 20px;
 `;
