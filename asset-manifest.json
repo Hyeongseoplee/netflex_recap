@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.js": "/netflix-recap/static/js/main.9ffc9d72.chunk.js",
+    "main.js.map": "/netflix-recap/static/js/main.9ffc9d72.chunk.js.map",
+    "runtime-main.js": "/netflix-recap/static/js/runtime-main.9017c878.js",
+    "runtime-main.js.map": "/netflix-recap/static/js/runtime-main.9017c878.js.map",
+    "static/js/2.ddbcbd75.chunk.js": "/netflix-recap/static/js/2.ddbcbd75.chunk.js",
+    "static/js/2.ddbcbd75.chunk.js.map": "/netflix-recap/static/js/2.ddbcbd75.chunk.js.map",
+    "index.html": "/netflix-recap/index.html",
+    "static/js/2.ddbcbd75.chunk.js.LICENSE.txt": "/netflix-recap/static/js/2.ddbcbd75.chunk.js.LICENSE.txt",
+    "static/media/noPosterSmall.png": "/netflix-recap/static/media/noPosterSmall.24a0c5f1.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9017c878.js",
+    "static/js/2.ddbcbd75.chunk.js",
+    "static/js/main.9ffc9d72.chunk.js"
+  ]
+}
