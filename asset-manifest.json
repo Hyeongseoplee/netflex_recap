@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/netflix-recap/static/js/main.9ffc9d72.chunk.js",
-    "main.js.map": "/netflix-recap/static/js/main.9ffc9d72.chunk.js.map",
-    "runtime-main.js": "/netflix-recap/static/js/runtime-main.9017c878.js",
-    "runtime-main.js.map": "/netflix-recap/static/js/runtime-main.9017c878.js.map",
-    "static/js/2.ddbcbd75.chunk.js": "/netflix-recap/static/js/2.ddbcbd75.chunk.js",
-    "static/js/2.ddbcbd75.chunk.js.map": "/netflix-recap/static/js/2.ddbcbd75.chunk.js.map",
-    "index.html": "/netflix-recap/index.html",
-    "static/js/2.ddbcbd75.chunk.js.LICENSE.txt": "/netflix-recap/static/js/2.ddbcbd75.chunk.js.LICENSE.txt",
-    "static/media/noPosterSmall.png": "/netflix-recap/static/media/noPosterSmall.24a0c5f1.png"
+    "main.js": "/netflix_react/static/js/main.6e8f770d.chunk.js",
+    "main.js.map": "/netflix_react/static/js/main.6e8f770d.chunk.js.map",
+    "runtime-main.js": "/netflix_react/static/js/runtime-main.b8ac340e.js",
+    "runtime-main.js.map": "/netflix_react/static/js/runtime-main.b8ac340e.js.map",
+    "static/js/2.bf31c7c2.chunk.js": "/netflix_react/static/js/2.bf31c7c2.chunk.js",
+    "static/js/2.bf31c7c2.chunk.js.map": "/netflix_react/static/js/2.bf31c7c2.chunk.js.map",
+    "index.html": "/netflix_react/index.html",
+    "static/js/2.bf31c7c2.chunk.js.LICENSE.txt": "/netflix_react/static/js/2.bf31c7c2.chunk.js.LICENSE.txt",
+    "static/media/noPosterSmall.png": "/netflix_react/static/media/noPosterSmall.24a0c5f1.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.9017c878.js",
-    "static/js/2.ddbcbd75.chunk.js",
-    "static/js/main.9ffc9d72.chunk.js"
+    "static/js/runtime-main.b8ac340e.js",
+    "static/js/2.bf31c7c2.chunk.js",
+    "static/js/main.6e8f770d.chunk.js"
   ]
 }
