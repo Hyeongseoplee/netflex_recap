@@ -16,7 +16,7 @@
     "styled-reset": "^4.3.4",
     "web-vitals": "^1.0.1"
   },
-  "homepage": "https://devVenny.github.io/netflix-recap",
+  "homepage": "https://devVenny.github.io/netflix-recap/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
